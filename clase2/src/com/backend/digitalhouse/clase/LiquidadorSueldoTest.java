@@ -1,4 +1,4 @@
-package com.backend.digitalhouse;
+package com.backend.digitalhouse.clase;
 
 import org.junit.jupiter.api.Test;
 

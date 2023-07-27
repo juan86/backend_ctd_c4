@@ -1,4 +1,4 @@
-package com.backend.digitalhouse;
+package com.backend.digitalhouse.clase;
 
 import java.util.ArrayList;
 import java.util.List;
