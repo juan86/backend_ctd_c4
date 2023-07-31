@@ -7,7 +7,7 @@ public class CompruebaMail {
     //se encarga de iniciar el proceso, por ende la cadena
     private ManejadorMail manejadorMail;
 
-    public CompruebaMail(){
+    public CompruebaMail() {
         //definir el orden de la cadena
         //inicio
         manejadorMail = new ManejadorGerencial();
@@ -26,7 +26,7 @@ public class CompruebaMail {
     }
 
 
-    public String procesarMail(Mail mail){
+    public String procesarMail(Mail mail) {
         return manejadorMail.procesarMail(mail);
     }
 

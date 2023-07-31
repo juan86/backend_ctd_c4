@@ -4,14 +4,14 @@ import com.backend.digitalhouse.clase.CompruebaMail;
 import com.backend.digitalhouse.clase.Mail;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class CompruebaMailTest {
 
     private final CompruebaMail compruebaMail = new CompruebaMail();
 
     @Test
-    void deberiaPasarASpam(){
+    void deberiaPasarASpam() {
         //arrange
         Mail mail = new Mail("slkgfhlskjgh", "lu@gmail.com", "ksjhkj@colmena.com");
         String rtaEsperada = "SPAM";
