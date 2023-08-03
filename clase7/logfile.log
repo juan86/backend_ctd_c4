@@ -1,0 +1,17 @@
+
+[2023-08-02 22:05:01] [ INFO ] [ComputadoraFactory:23] Computadora creada: 
+ID: AR2-128
+Ram: 2
+Disco: 128
+[2023-08-02 22:05:01] [ INFO ] [ComputadoraFactory:23] Computadora creada: 
+ID: AR16-500
+Ram: 16
+Disco: 500
+[2023-08-02 22:05:01] [ INFO ] [ComputadoraFactory:23] Computadora creada: 
+ID: AR2-256
+Ram: 2
+Disco: 256
+[2023-08-02 22:05:01] [ INFO ] [ComputadoraFactory:23] Computadora creada: 
+ID: AR8-500
+Ram: 8
+Disco: 500
