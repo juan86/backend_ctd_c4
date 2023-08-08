@@ -1,0 +1,4 @@
+[2023-08-08 01:10:17] [ ERROR] [MedicamentoDaoH2:44] No suitable driver found for dbc:h2:~/c4clase10
+[2023-08-08 01:10:17] [ ERROR] [MedicamentoDaoH2:60] No se pudo cerrar la conexion: Cannot invoke "java.sql.Connection.close()" because "connection" is null
+[2023-08-08 01:10:48] [ INFO ] [MedicamentoDaoH2:41] Medicamento guardado: 
+Id: 1 - Codigo: 35465 - Nombre: Aspirina - Laboratorio: Bayer - Cantidad: 50 - Precio: $200.0
