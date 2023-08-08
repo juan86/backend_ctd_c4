@@ -2,3 +2,9 @@
 [2023-08-08 01:10:17] [ ERROR] [MedicamentoDaoH2:60] No se pudo cerrar la conexion: Cannot invoke "java.sql.Connection.close()" because "connection" is null
 [2023-08-08 01:10:48] [ INFO ] [MedicamentoDaoH2:41] Medicamento guardado: 
 Id: 1 - Codigo: 35465 - Nombre: Aspirina - Laboratorio: Bayer - Cantidad: 50 - Precio: $200.0
+[2023-08-08 19:45:09] [ INFO ] [MedicamentoDaoH2:43] Medicamento guardado: 
+Id: 1 - Codigo: 35465 - Nombre: Aspirina - Laboratorio: Bayer - Cantidad: 50 - Precio: $200.0
+[2023-08-08 19:45:18] [ INFO ] [MedicamentoDaoH2:84] Se ha encontrado el medicamento 
+Id: 1 - Codigo: 35465 - Nombre: Aspirina - Laboratorio: Bayer - Cantidad: 50 - Precio: $200.0
+[2023-08-08 19:45:30] [ INFO ] [MedicamentoDaoH2:115] Listado de todos los medicamentos: [
+Id: 1 - Codigo: 35465 - Nombre: Aspirina - Laboratorio: Bayer - Cantidad: 50 - Precio: $200.0]

@@ -23,7 +23,11 @@ public class MedicamentoDaoEnMemoria implements IDao<Medicamento> {
         return medicamento;
     }
 
-
+    @Override
+    public List<Medicamento> listarTodos() {
+        LOGGER.info("Listado de todos los medicamentos: \n" + medicamentoRepository);
+        return medicamentoRepository;
+    }
     @Override
     public Medicamento buscarPorId(int id) {
         Medicamento medicamentoBuscado = medicamentoRepository.get(id - 1);

@@ -7,6 +7,10 @@ import com.backend.integrador.service.MedicamentoService;
 import org.junit.jupiter.api.Test;
 
 
+import java.util.List;
+
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.testng.Assert.assertNotNull;
 
 public class MedicamentoServiceTest {
@@ -46,7 +50,18 @@ esta es otra opcion en vez de hacer lo del main
         assertNotNull(medicamentoInsertado.getId());
     }
 
+    @Test
+    void deberiaEncontrarElMedicamentoConId1(){
+        assertNotNull(medicamentoService.buscarMedicamentoPorId(1));
+    }
 
+    @Test
+    public void deberiaHaberUnaListaNoVacia(){
+        List<Medicamento> medicamentosTest = medicamentoService.listarTodosLosMedicamentos();
+        assertFalse(medicamentosTest.isEmpty());
+        assertTrue(medicamentosTest.size() >= 1);
+
+    }
 
 
 }

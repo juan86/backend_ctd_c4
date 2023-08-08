@@ -6,6 +6,8 @@ import com.backend.integrador.entity.Medicamento;
 import org.apache.log4j.Logger;
 
 import java.sql.*;
+import java.util.ArrayList;
+import java.util.List;
 
 
 public class MedicamentoDaoH2 implements IDao<Medicamento> {
@@ -96,6 +98,46 @@ public class MedicamentoDaoH2 implements IDao<Medicamento> {
 
         return medicamento;
     }
+
+    @Override
+    public List<Medicamento> listarTodos() {
+        Connection connection = null;
+        List<Medicamento> medicamentos = new ArrayList<>();
+        try {
+            connection = H2Connection.getConnection();
+            connection.setAutoCommit(false);
+            PreparedStatement ps = connection.prepareStatement("SELECT * FROM MEDICAMENTOS");
+            ResultSet rs = ps.executeQuery();
+            while (rs.next()) {
+                medicamentos.add(crearObjetoMedicamento(rs));
+            }
+            connection.commit();
+            LOGGER.info("Listado de todos los medicamentos: " + medicamentos);
+
+        } catch (Exception e) {
+            LOGGER.error(e.getMessage());
+            e.printStackTrace();
+            if (connection != null) {
+                try {
+                    connection.rollback();
+                    System.out.println("Tuvimos un problema");
+                    e.printStackTrace();
+                } catch (SQLException exception) {
+                    LOGGER.error(exception.getMessage());
+                    exception.printStackTrace();
+                }
+            }
+        } finally {
+            try {
+                connection.close();
+            } catch (Exception ex) {
+                LOGGER.error("Ha ocurrido un error al intentar cerrar la bdd. " + ex.getMessage());
+                ex.printStackTrace();
+            }
+        }
+        return medicamentos;
+    }
+
 
     private Medicamento crearObjetoMedicamento(ResultSet rs) throws SQLException {
 
