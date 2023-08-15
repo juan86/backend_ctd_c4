@@ -1,0 +1,21 @@
+
+‡
+java:S11928"qDefine a constant instead of duplicating this literal "Ha ocurrido un error al intentar cerrar la bdd. " 4 times.(öåÅ‹
+_
+java:S2259–"HA "NullPointerException" could be thrown; "connection" is nullable here.(ôêÂœ
+^
+java:S2259{"HA "NullPointerException" could be thrown; "connection" is nullable here.(ôêÂœ
+^
+java:S2259V"HA "NullPointerException" could be thrown; "connection" is nullable here.(ôêÂœ
+e
+java:S2095f"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(ƒ´ô„
+j
+java:S2095G"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(ğƒóúúÿÿÿÿ
+j
+java:S2095"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(ĞÕƒìúÿÿÿÿ
+f
+java:S2095‰"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(¤Äèµ
+l
+java:S3008"QRename this field "LOGGER" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¼ùÔäşÿÿÿÿ
+N	java:S106-"9Replace this use of System.out or System.err by a logger.(á€çÁ
+N	java:S106r"9Replace this use of System.out or System.err by a logger.(á€çÁ

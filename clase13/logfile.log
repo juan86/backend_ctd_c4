@@ -1,0 +1,34 @@
+[2023-08-14 22:23:00] [ INFO ] [OdontologoDaoH2:78] Listado de todos los odontologos: [Id: 1 - Nombre: P. - Apellido: Sherman - Matricula: 4568]
+[2023-08-14 22:23:01] [ INFO ] [OdontologoDaoH2:37] Se ha registrado el odontologo: Id: 2 - Nombre: Patricia - Apellido: Damiani - Matricula: 12345
+[2023-08-14 22:23:23] [ INFO ] [DomicilioDaoH2:39] Se ha registrado el domicilio: Id: 3 - Calle: Calle - Numero: 13 - Localidad: Localidad - Provincia: Provincia
+[2023-08-14 22:23:23] [ INFO ] [PacienteDaoH2:46] Se ha registrado el paciente: Id: 0 - Nombre: Nombre - Apellido: Apellido - DNI: 123456 - Fechas de ingreso: 2023-05-02 - Domicilio: Id: 3 - Calle: Calle - Numero: 13 - Localidad: Localidad - Provincia: Provincia
+[2023-08-14 22:23:23] [ ERROR] [PacienteDaoH2:94] Parameter "#1" is not set; SQL statement:
+SELECT * FROM PACIENTES WHERE ID = ? [90012-214]
+[2023-08-14 22:23:23] [ INFO ] [PacienteDaoH2:120] Se ha eliminado el paciente con id: 3
+[2023-08-14 22:23:23] [ ERROR] [PacienteDaoH2:94] Parameter "#1" is not set; SQL statement:
+SELECT * FROM PACIENTES WHERE ID = ? [90012-214]
+[2023-08-14 22:23:23] [ INFO ] [DomicilioDaoH2:84] Se ha encontrado el domicilio: Id: 1 - Calle: Av Siempre Viva - Numero: 742 - Localidad: Springfield - Provincia: Massachusetts
+[2023-08-14 22:23:23] [ INFO ] [DomicilioDaoH2:84] Se ha encontrado el domicilio: Id: 2 - Calle: Calle Wallaby - Numero: 42 - Localidad: Sydney - Provincia: Nueva Gales del Sur
+[2023-08-14 22:23:23] [ INFO ] [PacienteDaoH2:160] Listado de todos los pacientes: [Id: 1 - Nombre: Emiliano - Apellido: Cellilli - DNI: 35464856 - Fechas de ingreso: 2023-05-24 - Domicilio: Id: 1 - Calle: Av Siempre Viva - Numero: 742 - Localidad: Springfield - Provincia: Massachusetts, Id: 2 - Nombre: Pablo - Apellido: Clemente - DNI: 3548546 - Fechas de ingreso: 2023-05-24 - Domicilio: Id: 2 - Calle: Calle Wallaby - Numero: 42 - Localidad: Sydney - Provincia: Nueva Gales del Sur]
+[2023-08-14 22:24:56] [ INFO ] [DomicilioDaoH2:39] Se ha registrado el domicilio: Id: 3 - Calle: Calle - Numero: 13 - Localidad: Localidad - Provincia: Provincia
+[2023-08-14 22:24:56] [ INFO ] [PacienteDaoH2:46] Se ha registrado el paciente: Id: 0 - Nombre: Nombre - Apellido: Apellido - DNI: 123456 - Fechas de ingreso: 2023-05-02 - Domicilio: Id: 3 - Calle: Calle - Numero: 13 - Localidad: Localidad - Provincia: Provincia
+[2023-08-14 22:24:56] [ INFO ] [DomicilioDaoH2:84] Se ha encontrado el domicilio: Id: 1 - Calle: Av Siempre Viva - Numero: 742 - Localidad: Springfield - Provincia: Massachusetts
+[2023-08-14 22:24:56] [ INFO ] [DomicilioDaoH2:84] Se ha encontrado el domicilio: Id: 2 - Calle: Calle Wallaby - Numero: 42 - Localidad: Sydney - Provincia: Nueva Gales del Sur
+[2023-08-14 22:24:56] [ ERROR] [DomicilioDaoH2:83] No se ha encontrado el domicilio con id: 0
+[2023-08-14 22:24:56] [ INFO ] [PacienteDaoH2:160] Listado de todos los pacientes: [Id: 1 - Nombre: Emiliano - Apellido: Cellilli - DNI: 35464856 - Fechas de ingreso: 2023-05-24 - Domicilio: Id: 1 - Calle: Av Siempre Viva - Numero: 742 - Localidad: Springfield - Provincia: Massachusetts, Id: 2 - Nombre: Pablo - Apellido: Clemente - DNI: 3548546 - Fechas de ingreso: 2023-05-24 - Domicilio: Id: 2 - Calle: Calle Wallaby - Numero: 42 - Localidad: Sydney - Provincia: Nueva Gales del Sur, Id: 3 - Nombre: Nombre - Apellido: Apellido - DNI: 123456 - Fechas de ingreso: 2023-05-02 - Domicilio: null]
+[2023-08-14 22:26:09] [ INFO ] [OdontologoDaoH2:78] Listado de todos los odontologos: [Id: 1 - Nombre: P. - Apellido: Sherman - Matricula: 4568]
+[2023-08-14 22:26:09] [ INFO ] [OdontologoDaoH2:37] Se ha registrado el odontologo: Id: 2 - Nombre: Patricia - Apellido: Damiani - Matricula: 12345
+[2023-08-14 22:26:09] [ INFO ] [DomicilioDaoH2:39] Se ha registrado el domicilio: Id: 3 - Calle: Calle - Numero: 13 - Localidad: Localidad - Provincia: Provincia
+[2023-08-14 22:26:09] [ INFO ] [PacienteDaoH2:46] Se ha registrado el paciente: Id: 0 - Nombre: Nombre - Apellido: Apellido - DNI: 123456 - Fechas de ingreso: 2023-05-02 - Domicilio: Id: 3 - Calle: Calle - Numero: 13 - Localidad: Localidad - Provincia: Provincia
+[2023-08-14 22:26:09] [ INFO ] [DomicilioDaoH2:84] Se ha encontrado el domicilio: Id: 1 - Calle: Av Siempre Viva - Numero: 742 - Localidad: Springfield - Provincia: Massachusetts
+[2023-08-14 22:26:09] [ INFO ] [DomicilioDaoH2:84] Se ha encontrado el domicilio: Id: 2 - Calle: Calle Wallaby - Numero: 42 - Localidad: Sydney - Provincia: Nueva Gales del Sur
+[2023-08-14 22:26:09] [ ERROR] [DomicilioDaoH2:83] No se ha encontrado el domicilio con id: 0
+[2023-08-14 22:26:09] [ INFO ] [PacienteDaoH2:160] Listado de todos los pacientes: [Id: 1 - Nombre: Emiliano - Apellido: Cellilli - DNI: 35464856 - Fechas de ingreso: 2023-05-24 - Domicilio: Id: 1 - Calle: Av Siempre Viva - Numero: 742 - Localidad: Springfield - Provincia: Massachusetts, Id: 2 - Nombre: Pablo - Apellido: Clemente - DNI: 3548546 - Fechas de ingreso: 2023-05-24 - Domicilio: Id: 2 - Calle: Calle Wallaby - Numero: 42 - Localidad: Sydney - Provincia: Nueva Gales del Sur, Id: 3 - Nombre: Nombre - Apellido: Apellido - DNI: 123456 - Fechas de ingreso: 2023-05-02 - Domicilio: null]
+[2023-08-14 22:39:19] [ INFO ] [OdontologoDaoH2:78] Listado de todos los odontologos: [Id: 1 - Nombre: P. - Apellido: Sherman - Matricula: 4568]
+[2023-08-14 22:39:20] [ INFO ] [OdontologoDaoH2:37] Se ha registrado el odontologo: Id: 2 - Nombre: Patricia - Apellido: Damiani - Matricula: 12345
+[2023-08-14 22:39:20] [ INFO ] [DomicilioDaoH2:39] Se ha registrado el domicilio: Id: 3 - Calle: Calle - Numero: 13 - Localidad: Localidad - Provincia: Provincia
+[2023-08-14 22:39:20] [ INFO ] [PacienteDaoH2:46] Se ha registrado el paciente: Id: 0 - Nombre: Nombre - Apellido: Apellido - DNI: 123456 - Fechas de ingreso: 2023-05-02 - Domicilio: Id: 3 - Calle: Calle - Numero: 13 - Localidad: Localidad - Provincia: Provincia
+[2023-08-14 22:39:21] [ INFO ] [DomicilioDaoH2:84] Se ha encontrado el domicilio: Id: 1 - Calle: Av Siempre Viva - Numero: 742 - Localidad: Springfield - Provincia: Massachusetts
+[2023-08-14 22:39:21] [ INFO ] [DomicilioDaoH2:84] Se ha encontrado el domicilio: Id: 2 - Calle: Calle Wallaby - Numero: 42 - Localidad: Sydney - Provincia: Nueva Gales del Sur
+[2023-08-14 22:39:21] [ ERROR] [DomicilioDaoH2:83] No se ha encontrado el domicilio con id: 0
+[2023-08-14 22:39:21] [ INFO ] [PacienteDaoH2:160] Listado de todos los pacientes: [Id: 1 - Nombre: Emiliano - Apellido: Cellilli - DNI: 35464856 - Fechas de ingreso: 2023-05-24 - Domicilio: Id: 1 - Calle: Av Siempre Viva - Numero: 742 - Localidad: Springfield - Provincia: Massachusetts, Id: 2 - Nombre: Pablo - Apellido: Clemente - DNI: 3548546 - Fechas de ingreso: 2023-05-24 - Domicilio: Id: 2 - Calle: Calle Wallaby - Numero: 42 - Localidad: Sydney - Provincia: Nueva Gales del Sur, Id: 3 - Nombre: Nombre - Apellido: Apellido - DNI: 123456 - Fechas de ingreso: 2023-05-02 - Domicilio: null]

@@ -9,7 +9,7 @@ import java.util.List;
 
 public class MedicamentoDaoEnMemoria implements IDao<Medicamento> {
 
-    private static final Logger LOGGER = Logger.getLogger(MedicamentoDaoEnMemoria.class);
+    private final Logger LOGGER = Logger.getLogger(MedicamentoDaoEnMemoria.class);
     private List<Medicamento> medicamentoRepository;
 
     public MedicamentoDaoEnMemoria(List<Medicamento> medicamentoRepository) {
