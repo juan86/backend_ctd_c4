@@ -3,6 +3,7 @@ package com.backend.clinicaodontologica.controller;
 
 
 
+import com.backend.clinicaodontologica.dto.entrada.paciente.PacienteEntradaDto;
 import com.backend.clinicaodontologica.entity.Paciente;
 import com.backend.clinicaodontologica.service.IPacienteService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,7 +23,7 @@ public class PacienteController {
 
     //POST
     @PostMapping("registrar")
-    public Paciente registrarPaciente(@RequestBody Paciente paciente){
+    public Paciente registrarPaciente(@RequestBody PacienteEntradaDto paciente){
         return pacienteService.registrarPaciente(paciente);
     }
 

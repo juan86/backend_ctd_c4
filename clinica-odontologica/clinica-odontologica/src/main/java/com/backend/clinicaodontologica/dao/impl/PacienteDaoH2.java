@@ -7,13 +7,15 @@ import com.backend.clinicaodontologica.entity.Domicilio;
 import com.backend.clinicaodontologica.entity.Paciente;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.stereotype.Component;
+
 
 import java.sql.*;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
-
+@Component
 public class PacienteDaoH2 implements IDao<Paciente> {
 
     private final Logger LOGGER = LoggerFactory.getLogger(PacienteDaoH2.class);
@@ -41,7 +43,7 @@ public class PacienteDaoH2 implements IDao<Paciente> {
 
             ResultSet rs = ps.getGeneratedKeys();
             while (rs.next()){
-                paciente.setId(rs.getInt(1));
+                paciente1.setId(rs.getInt(1));
             }
 
             connection.commit();

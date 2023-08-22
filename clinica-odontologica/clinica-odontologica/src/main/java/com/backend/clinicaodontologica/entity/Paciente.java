@@ -9,11 +9,11 @@ public class Paciente {
     private String nombre;
     private String apellido;
     private int dni;
-
-    //@JsonProperty("fechaingreso") - en caso que el campo a mapear este escrito distinto a nuestro modelo
     private LocalDate fechaIngreso;
     private Domicilio domicilio;
 
+    public Paciente() {
+    }
 
     public Paciente(int id, String nombre, String apellido, int dni, LocalDate fechaIngreso, Domicilio domicilio) {
         this.id = id;
