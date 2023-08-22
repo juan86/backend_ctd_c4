@@ -11,7 +11,7 @@ import java.util.List;
 @Service
 public class PacienteService implements IPacienteService {
 
-    private IDao<Paciente> pacienteIDao;
+    private final IDao<Paciente> pacienteIDao;
 
     @Autowired //no es necesario que la anotacion este
     public PacienteService(IDao<Paciente> pacienteIDao) {

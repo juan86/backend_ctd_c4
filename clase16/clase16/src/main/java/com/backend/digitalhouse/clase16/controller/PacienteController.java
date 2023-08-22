@@ -5,11 +5,10 @@ import com.backend.digitalhouse.clase16.service.IPacienteService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 
-@Controller
+//@Controller
+@RestController
 @RequestMapping("/pacientes")
 public class PacienteController {
 
@@ -30,6 +29,18 @@ public class PacienteController {
 
         return "paciente";
 
+    }
+
+    //ejemplo de endpoint rest con PathVariable - http://localhost:8081/pacientes/11111111
+    @GetMapping("/{dni}")
+    public Paciente buscarPacPorDni(@PathVariable int dni){
+        return pacienteService.buscarPorDni(dni);
+    }
+
+    //mismo ejemplo con RequestParam - http://localhost:8081/pacientes/buscar?dni=11111111
+    @GetMapping("/buscar")
+    public Paciente buscarPorDni(@RequestParam int dni){
+        return pacienteService.buscarPorDni(dni);
     }
 
 }

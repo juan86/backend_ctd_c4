@@ -1,5 +1,7 @@
 package com.backend.clinicaodontologica.entity;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import java.time.LocalDate;
 
 public class Paciente {
@@ -7,6 +9,8 @@ public class Paciente {
     private String nombre;
     private String apellido;
     private int dni;
+
+    //@JsonProperty("fechaingreso") - en caso que el campo a mapear este escrito distinto a nuestro modelo
     private LocalDate fechaIngreso;
     private Domicilio domicilio;
 

@@ -1,0 +1,20 @@
+
+_
+java:S2259…"HA "NullPointerException" could be thrown; "connection" is nullable here.(ôêÂœ
+^
+java:S2259h"HA "NullPointerException" could be thrown; "connection" is nullable here.(ôêÂœ
+^
+java:S2259/"HA "NullPointerException" could be thrown; "connection" is nullable here.(ôêÂœ
+^
+java:S2259K"HA "NullPointerException" could be thrown; "connection" is nullable here.(ôêÂœ
+j
+java:S2095x"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(ðƒóúúÿÿÿÿ
+j
+java:S2095"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(‚“”½øÿÿÿÿ
+j
+java:S2095["OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(˜†Ðùÿÿÿÿ
+e
+java:S2095>"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(¤Äèµ
+i	java:S116"TRename this field "CTE_ERROR" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(†ëƒÛ
+7
+java:S1170"!Make this final field static too.(†ëƒÛ

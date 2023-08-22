@@ -1,4 +1,4 @@
-package com.backend.clinicaodontologica.service;
+package com.backend.clinicaodontologica.service.impl;
 
 
 
@@ -8,7 +8,7 @@ import com.backend.clinicaodontologica.entity.Odontologo;
 import java.util.List;
 
 public class OdontologoService {
-    private IDao<Odontologo> odontologoIDao;
+    private final IDao<Odontologo> odontologoIDao;
 
     public OdontologoService(IDao<Odontologo> odontologoIDao) {
         this.odontologoIDao = odontologoIDao;
