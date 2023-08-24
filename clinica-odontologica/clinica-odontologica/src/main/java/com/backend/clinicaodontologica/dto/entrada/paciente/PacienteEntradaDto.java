@@ -1,6 +1,5 @@
 package com.backend.clinicaodontologica.dto.entrada.paciente;
 
-import com.backend.clinicaodontologica.entity.Domicilio;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 

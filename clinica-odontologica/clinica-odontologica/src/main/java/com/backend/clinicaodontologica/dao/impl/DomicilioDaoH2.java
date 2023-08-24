@@ -6,7 +6,6 @@ import com.backend.clinicaodontologica.entity.Domicilio;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -33,7 +32,7 @@ public class DomicilioDaoH2 implements IDao<Domicilio> {
 
             ResultSet rs = ps.getGeneratedKeys();
             domicilio1 = new Domicilio(domicilio.getCalle(), domicilio.getNumero(), domicilio.getLocalidad(), domicilio.getProvincia());
-            while (rs.next()){
+            while (rs.next()) {
                 domicilio1.setId(rs.getInt("id"));
             }
 
@@ -82,7 +81,7 @@ public class DomicilioDaoH2 implements IDao<Domicilio> {
                 domicilio = new Domicilio(rs.getInt(1), rs.getString(2), rs.getInt(3), rs.getString(4), rs.getString(5));
             }
 
-            if(domicilio == null) LOGGER.error("No se ha encontrado el domicilio con id: {}", id);
+            if (domicilio == null) LOGGER.error("No se ha encontrado el domicilio con id: {}", id);
             else LOGGER.info("Se ha encontrado el domicilio: {}", domicilio);
 
         } catch (Exception e) {
@@ -102,7 +101,7 @@ public class DomicilioDaoH2 implements IDao<Domicilio> {
     @Override
     public void eliminar(int id) {
         Connection connection = null;
-        try{
+        try {
             connection = H2Connection.getConnection();
             connection.setAutoCommit(false);
             PreparedStatement ps = connection.prepareStatement("DELETE FROM DOMICILIOS WHERE ID = ?", id);
@@ -141,11 +140,11 @@ public class DomicilioDaoH2 implements IDao<Domicilio> {
         Connection connection = null;
         List<Domicilio> domicilios = new ArrayList<>();
 
-        try{
+        try {
             connection = H2Connection.getConnection();
             PreparedStatement ps = connection.prepareStatement("SELECT * FROM DOMICILIOS");
             ResultSet rs = ps.executeQuery();
-            while (rs.next()){
+            while (rs.next()) {
                 Domicilio domicilio = new Domicilio(rs.getInt(1), rs.getString(2), rs.getInt(3), rs.getString(4), rs.getString(5));
                 domicilios.add(domicilio);
             }
@@ -164,7 +163,7 @@ public class DomicilioDaoH2 implements IDao<Domicilio> {
                 ex.printStackTrace();
             }
         }
-        return  domicilios;
+        return domicilios;
     }
 
     @Override

@@ -1,8 +1,8 @@
 package com.backend.clinicaodontologica.service.impl;
 
 
-
 import com.backend.clinicaodontologica.dao.IDao;
+import com.backend.clinicaodontologica.dto.entrada.modificacion.PacienteModificacionEntradaDto;
 import com.backend.clinicaodontologica.dto.entrada.paciente.PacienteEntradaDto;
 import com.backend.clinicaodontologica.dto.salida.paciente.PacienteSalidaDto;
 import com.backend.clinicaodontologica.entity.Paciente;
@@ -14,53 +14,84 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-public class PacienteService implements IPacienteService{
+public class PacienteService implements IPacienteService {
     private final IDao<Paciente> pacienteIDao;
     private final ModelMapper modelMapper;
-
     public PacienteService(IDao<Paciente> pacienteIDao, ModelMapper modelMapper) {
         this.pacienteIDao = pacienteIDao;
         this.modelMapper = modelMapper;
         configureMapping();
     }
 
-    public PacienteSalidaDto registrarPaciente(PacienteEntradaDto paciente){
+
+    public PacienteSalidaDto registrarPaciente(PacienteEntradaDto paciente) {
         //convertir Dto de entrada a entidad para poder enviarlo a la capa de persistencia
-        Paciente pacienteAPersistir = mapToEntity(paciente);
-        Paciente pacienteRegistrado = pacienteIDao.registrar(pacienteAPersistir);
+        Paciente pacienteRecibido = dtoEntradaAEntidad(paciente);
+        Paciente pacienteRegistrado = pacienteIDao.registrar(pacienteRecibido);
 
-
-
-        return pacienteIDao.registrar(paciente);
-    }
-
-
-    public Paciente buscarPacientePorId(int id){
-        return pacienteIDao.buscarPorId(id);
-    }
-
-    public List<Paciente> listarPacientes(){
-        return pacienteIDao.listarTodos();
-    }
-
-
-    public void eliminarPaciente(int id){
-        pacienteIDao.eliminar(id);
+        return entidadADtoSalida(pacienteRegistrado);
     }
 
     @Override
-    public Paciente modificarPaciente(Paciente pacienteModificado) {
-        return pacienteIDao.modificar(pacienteModificado);
+    public PacienteSalidaDto modificarPaciente(PacienteModificacionEntradaDto pacienteModificado) {
+        PacienteSalidaDto pacienteSalidaDto = null;
+        Paciente pacienteAModificar = pacienteIDao.buscarPorId(pacienteModificado.getId());
+
+        if(pacienteAModificar != null){
+            pacienteAModificar = dtoModificadoAEntidad(pacienteModificado);
+            pacienteSalidaDto = entidadADtoSalida(pacienteIDao.modificar(pacienteAModificar));
+
+        }
+
+        return pacienteSalidaDto;
+    }
+
+    @Override
+    public PacienteSalidaDto buscarPacientePorId(int id) {
+        return entidadADtoSalida(pacienteIDao.buscarPorId(id));
+    }
+
+    @Override
+    public List<PacienteSalidaDto> listarPacientes() {
+        List<Paciente> pacientes = pacienteIDao.listarTodos();
+
+        //List<PacienteSalidaDto> pacienteSalidaDtos = new ArrayList<>();
+
+        //for(Paciente p : pacientes){
+           // pacienteSalidaDtos.add(entidadADtoSalida(p));
+        //}
+
+        return pacientes.stream()
+                .map(this::entidadADtoSalida)
+                .toList();
+    }
+
+    @Override
+    public void eliminarPaciente(int id) {
+        pacienteIDao.eliminar(id);
+
     }
 
 
-    private void configureMapping(){
+    private void configureMapping() {
         modelMapper.typeMap(PacienteEntradaDto.class, Paciente.class)
                 .addMappings(mapper -> mapper.map(PacienteEntradaDto::getDomicilio, Paciente::setDomicilio));
+        modelMapper.typeMap(Paciente.class, PacienteSalidaDto.class)
+                .addMappings(mapper -> mapper.map(Paciente::getDomicilio, PacienteSalidaDto::setDomicilio));
+        modelMapper.typeMap(PacienteModificacionEntradaDto.class, Paciente.class)
+                .addMappings(mapper -> mapper.map(PacienteModificacionEntradaDto::getDomicilio, Paciente::setDomicilio));
 
     }
 
-    public Paciente mapToEntity(PacienteEntradaDto pacienteEntradaDto){
+    public Paciente dtoEntradaAEntidad(PacienteEntradaDto pacienteEntradaDto) {
+        return modelMapper.map(pacienteEntradaDto, Paciente.class);
+    }
+
+    public PacienteSalidaDto entidadADtoSalida(Paciente paciente) {
+        return modelMapper.map(paciente, PacienteSalidaDto.class);
+    }
+
+    public Paciente dtoModificadoAEntidad(PacienteModificacionEntradaDto pacienteEntradaDto) {
         return modelMapper.map(pacienteEntradaDto, Paciente.class);
     }
 

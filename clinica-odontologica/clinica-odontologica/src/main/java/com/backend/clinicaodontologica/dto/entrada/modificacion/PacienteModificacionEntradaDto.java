@@ -1,22 +1,35 @@
-package com.backend.clinicaodontologica.dto.salida.paciente;
+package com.backend.clinicaodontologica.dto.entrada.modificacion;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
+import javax.validation.constraints.NotNull;
 import java.time.LocalDate;
 
-public class PacienteSalidaDto {
+@JsonIgnoreProperties(ignoreUnknown = true)
+public class PacienteModificacionEntradaDto {
 
+    @NotNull
     private int id;
+
+    @NotNull
     private String nombre;
 
+    @NotNull
     private String apellido;
+
+    @NotNull
     private String dni;
 
+    @NotNull
     private LocalDate fechaIngreso;
-    private DomicilioSalidaDto domicilio;
 
-    public PacienteSalidaDto() {
+    @NotNull
+    private DomicilioModificacionEntradaDto domicilio;
+
+    public PacienteModificacionEntradaDto() {
     }
 
-    public PacienteSalidaDto(int id, String nombre, String apellido, String dni, LocalDate fechaIngreso, DomicilioSalidaDto domicilio) {
+    public PacienteModificacionEntradaDto(int id, String nombre, String apellido, String dni, LocalDate fechaIngreso, DomicilioModificacionEntradaDto domicilio) {
         this.id = id;
         this.nombre = nombre;
         this.apellido = apellido;
@@ -65,11 +78,11 @@ public class PacienteSalidaDto {
         this.fechaIngreso = fechaIngreso;
     }
 
-    public DomicilioSalidaDto getDomicilio() {
+    public DomicilioModificacionEntradaDto getDomicilio() {
         return domicilio;
     }
 
-    public void setDomicilio(DomicilioSalidaDto domicilio) {
+    public void setDomicilio(DomicilioModificacionEntradaDto domicilio) {
         this.domicilio = domicilio;
     }
 }
