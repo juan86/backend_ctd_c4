@@ -7,9 +7,11 @@ import com.backend.clinicaodontologica.dto.salida.odontologo.OdontologoSalidaDto
 import com.backend.clinicaodontologica.entity.Odontologo;
 import com.backend.clinicaodontologica.service.IOdontologoService;
 import org.modelmapper.ModelMapper;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service
 public class OdontologoService implements IOdontologoService {
     private final IDao<Odontologo> odontologoIDao;
     private final ModelMapper modelMapper;

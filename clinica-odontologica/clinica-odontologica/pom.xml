@@ -8,15 +8,19 @@
         <version>2.7.14</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
+
     <groupId>com.backend</groupId>
     <artifactId>clinica-odontologica</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>clinica-odontologica</name>
     <description>Proyecto integrador Backend I - CTD</description>
+
     <properties>
         <java.version>17</java.version>
-        <versionProperty></versionProperty>
+        <versionProperty/>
     </properties>
+
+
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>

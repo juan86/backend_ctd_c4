@@ -6,12 +6,13 @@ import com.backend.clinicaodontologica.dao.IDao;
 import com.backend.clinicaodontologica.entity.Odontologo;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.stereotype.Component;
 
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
-
+@Component
 public class OdontologoDaoH2 implements IDao<Odontologo> {
     private final Logger LOGGER = LoggerFactory.getLogger(OdontologoDaoH2.class);
     private final String CTE_ERROR = "Ha ocurrido un error al intentar cerrar la bdd. {}";
