@@ -69,12 +69,12 @@ public class TurnoService implements ITurnoService {
     }
 
     @Override
-    public TurnoSalidaDto buscarTurnoPorId(int id) {
+    public TurnoSalidaDto buscarTurnoPorId(Long id) {
         return null;
     }
 
     @Override
-    public void eliminarTurno(int id) {
+    public void eliminarTurnoLong id) {
 
     }
 

@@ -1,25 +1,30 @@
 package com.backend.clinicaodontologica.entity;
 
+
+
+import javax.persistence.*;
 import java.time.LocalDate;
 
+@Entity
+@Table(name = "PACIENTES")
 public class Paciente {
-    private int id;
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+    @Column(length = 50)
     private String nombre;
+
+    @Column(length = 50)
     private String apellido;
     private int dni;
     private LocalDate fechaIngreso;
+
+    @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @JoinColumn(name = "domilicio_id")
     private Domicilio domicilio;
 
     public Paciente() {
-    }
-
-    public Paciente(int id, String nombre, String apellido, int dni, LocalDate fechaIngreso, Domicilio domicilio) {
-        this.id = id;
-        this.nombre = nombre;
-        this.apellido = apellido;
-        this.dni = dni;
-        this.fechaIngreso = fechaIngreso;
-        this.domicilio = domicilio;
     }
 
     public Paciente(String nombre, String apellido, int dni, LocalDate fechaIngreso, Domicilio domicilio) {
@@ -30,12 +35,8 @@ public class Paciente {
         this.domicilio = domicilio;
     }
 
-    public int getId() {
+    public Long getId() {
         return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
     }
 
     public String getNombre() {

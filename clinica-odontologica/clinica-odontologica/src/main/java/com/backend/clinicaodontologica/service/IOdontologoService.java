@@ -1,6 +1,7 @@
 package com.backend.clinicaodontologica.service;
 
 
+import com.backend.clinicaodontologica.dto.entrada.modificacion.OdontologoModificacionEntradaDto;
 import com.backend.clinicaodontologica.dto.entrada.odontologo.OdontologoEntradaDto;
 import com.backend.clinicaodontologica.dto.salida.odontologo.OdontologoSalidaDto;
 
@@ -12,8 +13,10 @@ public interface IOdontologoService {
 
     OdontologoSalidaDto registrarOdontologo(OdontologoEntradaDto odontologo);
 
-    OdontologoSalidaDto buscarOdontologoPorId(int id);
+    OdontologoSalidaDto buscarOdontologoPorId(Long id);
 
-    void eliminarOdontologo(int id);
+    void eliminarOdontologo(Long id);
+
+    OdontologoSalidaDto actualizarOdontologo(OdontologoModificacionEntradaDto odontologoModificacionEntradaDto);
 
 }
