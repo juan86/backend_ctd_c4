@@ -3,7 +3,9 @@ package com.backend.clinicaodontologica.entity;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "ODONTOLOGOS")
+@Table(name = "ODONTOLOGOS", uniqueConstraints = {
+        @UniqueConstraint(columnNames = {"matricula"})
+})
 public class Odontologo {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -26,6 +28,9 @@ public class Odontologo {
         return id;
     }
 
+    public void setId(Long id) {
+        this.id = id;
+    }
 
     public String getMatricula() {
         return matricula;

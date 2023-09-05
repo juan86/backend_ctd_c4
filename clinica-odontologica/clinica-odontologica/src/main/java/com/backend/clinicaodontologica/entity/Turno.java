@@ -2,6 +2,7 @@ package com.backend.clinicaodontologica.entity;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
+
 @Entity
 @Table(name = "TURNOS")
 public class Turno {
@@ -31,6 +32,10 @@ public class Turno {
 
     public Long getId() {
         return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public Odontologo getOdontologo() {

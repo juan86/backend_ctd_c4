@@ -22,7 +22,7 @@ public class ClinicaOdontologicaApplication {
 
 
     @Bean
-    public ModelMapper modelMapper(){
+    public ModelMapper modelMapper() {
         return new ModelMapper();
     }
 

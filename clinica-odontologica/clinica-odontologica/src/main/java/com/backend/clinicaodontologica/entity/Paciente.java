@@ -1,12 +1,13 @@
 package com.backend.clinicaodontologica.entity;
 
 
-
 import javax.persistence.*;
 import java.time.LocalDate;
 
 @Entity
-@Table(name = "PACIENTES")
+@Table(name = "PACIENTES", uniqueConstraints = {
+        @UniqueConstraint(columnNames = {"dni"})
+})
 public class Paciente {
 
     @Id
@@ -37,6 +38,10 @@ public class Paciente {
 
     public Long getId() {
         return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getNombre() {
@@ -79,8 +84,5 @@ public class Paciente {
         this.domicilio = domicilio;
     }
 
-    @Override
-    public String toString() {
-        return "Id: " + id + " - Nombre: " + nombre + " - Apellido: " + apellido + " - DNI: " + dni + " - Fechas de ingreso: " + fechaIngreso + " - Domicilio: " + domicilio;
-    }
+
 }

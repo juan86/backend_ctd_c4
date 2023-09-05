@@ -18,7 +18,6 @@ public class Domicilio {
     }
 
 
-
     public Domicilio(String calle, int numero, String localidad, String provincia) {
         this.calle = calle;
         this.numero = numero;
@@ -30,7 +29,9 @@ public class Domicilio {
         return id;
     }
 
-
+    public void setId(Long id) {
+        this.id = id;
+    }
 
     public String getCalle() {
         return calle;
@@ -64,8 +65,5 @@ public class Domicilio {
         this.provincia = provincia;
     }
 
-    @Override
-    public String toString() {
-        return "Id: " + id + " - Calle: " + calle + " - Numero: " + numero + " - Localidad: " + localidad + " - Provincia: " + provincia;
-    }
+
 }
