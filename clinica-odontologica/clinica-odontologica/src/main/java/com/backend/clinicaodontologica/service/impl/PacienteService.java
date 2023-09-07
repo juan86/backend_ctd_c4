@@ -61,21 +61,28 @@ public class PacienteService implements IPacienteService {
 
 
     @Override
-    public PacienteSalidaDto modificarPaciente(PacienteModificacionEntradaDto pacienteModificado) {
-         /*
-      PacienteSalidaDto pacienteSalidaDto = null;
-      Paciente pacienteAModificar = pacienteIDao.buscarPorId(pacienteModificado.getId());
+    public PacienteSalidaDto modificarPaciente(PacienteModificacionEntradaDto pacienteModificado) throws ResourceNotFoundException {
+        Paciente pacienteRecibido = dtoModificadoAEntidad(pacienteModificado);
+        Paciente pacienteAActualizar = pacienteRepository.findById(pacienteModificado.getId()).orElse(null);
+        PacienteSalidaDto pacienteSalidaDto = null;
 
-      if(pacienteAModificar != null){
-          pacienteAModificar = dtoModificadoAEntidad(pacienteModificado);
-          pacienteSalidaDto = entidadADtoSalida(pacienteIDao.modificar(pacienteAModificar));
+        if (pacienteAActualizar != null) {
 
-      }
+            pacienteAActualizar = pacienteRecibido;
+            pacienteRepository.save(pacienteAActualizar);
 
-      return pacienteSalidaDto;
+            pacienteSalidaDto = entidadADtoSalida(pacienteAActualizar);
 
-          */
-        return null;
+            LOGGER.warn("Paciente actualizado: {}", pacienteSalidaDto);
+
+        } else {
+            LOGGER.error("No fue posible actualizar los datos ya que el paciente no se encuentra registrado");
+            throw new ResourceNotFoundException("No fue posible actualizar los datos ya que el paciente no se encuentra registrado");
+        }
+
+
+        return pacienteSalidaDto;
+
     }
 
 
@@ -102,11 +109,11 @@ public class PacienteService implements IPacienteService {
 
     }
 
-    public Paciente dtoEntradaAEntidad(PacienteEntradaDto pacienteEntradaDto) {
+    private Paciente dtoEntradaAEntidad(PacienteEntradaDto pacienteEntradaDto) {
         return modelMapper.map(pacienteEntradaDto, Paciente.class);
     }
 
-    public PacienteSalidaDto entidadADtoSalida(Paciente paciente) {
+    private PacienteSalidaDto entidadADtoSalida(Paciente paciente) {
         return modelMapper.map(paciente, PacienteSalidaDto.class);
     }
 

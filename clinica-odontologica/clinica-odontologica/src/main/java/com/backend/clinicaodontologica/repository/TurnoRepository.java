@@ -9,11 +9,13 @@ import java.util.List;
 
 @Repository
 public interface TurnoRepository extends JpaRepository<Turno, Long> {
-/*
-    @Query("Select t from TURNO t join t.paciente p where p.apellido = ?1")
+
+
+    @Query("SELECT t FROM Turno t JOIN t.paciente p WHERE p.apellido = ?1")
     List<Turno> listarTurnosPorApellidoPaciente(String apellido);
+
 
     @Query(value = "SELECT * FROM TURNOS JOIN ODONTOLOGOS ON TURNOS.ODONTOLOGO_ID = ODONTOLOGOS.ID WHERE ODONTOLOGOS.APELLIDO = ?1", nativeQuery = true)
     List<Turno> listarTurnosPorApellidoOdontologo(String apellido);
-*/
+
 }
