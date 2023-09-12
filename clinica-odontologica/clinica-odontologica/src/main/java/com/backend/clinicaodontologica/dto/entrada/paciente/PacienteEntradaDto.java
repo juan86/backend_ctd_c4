@@ -10,7 +10,7 @@ import java.time.LocalDate;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class PacienteEntradaDto {
 
-    @Size(min = 2, max = 50, message = "El nombre debe tener hasta 50 caracteres")
+    @Size(max = 50, message = "El nombre debe tener hasta 50 caracteres")
     @NotNull(message = "El nombre del paciente no puede ser nulo")
     @NotBlank(message = "Debe especificarse el nombre del paciente")
     private String nombre;
@@ -23,7 +23,7 @@ public class PacienteEntradaDto {
 
     @NotNull(message = "Debe especificarse el dni del paciente")
     @Digits(integer = 8, fraction = 0, message = "El número debe tener como máximo 8 dígitos")
-    private int dni;
+    private Integer dni;
 
     //@JsonProperty("fechaingreso") - en caso que el campo a mapear este escrito distinto a nuestro modelo
     @FutureOrPresent(message = "La fecha no puede ser anterior al día de hoy")

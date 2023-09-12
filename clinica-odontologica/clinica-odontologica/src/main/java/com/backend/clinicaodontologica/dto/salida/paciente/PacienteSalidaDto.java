@@ -8,7 +8,7 @@ public class PacienteSalidaDto {
     private String nombre;
 
     private String apellido;
-    private String dni;
+    private Integer dni;
 
     private LocalDate fechaIngreso;
     private DomicilioSalidaDto domicilio;
@@ -16,7 +16,7 @@ public class PacienteSalidaDto {
     public PacienteSalidaDto() {
     }
 
-    public PacienteSalidaDto(Long id, String nombre, String apellido, String dni, LocalDate fechaIngreso, DomicilioSalidaDto domicilio) {
+    public PacienteSalidaDto(Long id, String nombre, String apellido, Integer dni, LocalDate fechaIngreso, DomicilioSalidaDto domicilio) {
         this.id = id;
         this.nombre = nombre;
         this.apellido = apellido;
@@ -49,11 +49,11 @@ public class PacienteSalidaDto {
         this.apellido = apellido;
     }
 
-    public String getDni() {
+    public Integer getDni() {
         return dni;
     }
 
-    public void setDni(String dni) {
+    public void setDni(Integer dni) {
         this.dni = dni;
     }
 

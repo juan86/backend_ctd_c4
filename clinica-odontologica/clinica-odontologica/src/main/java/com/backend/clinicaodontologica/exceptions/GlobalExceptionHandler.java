@@ -1,7 +1,7 @@
 package com.backend.clinicaodontologica.exceptions;
 
+import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.http.HttpStatus;
-import org.springframework.http.converter.HttpMessageNotReadableException;
 import org.springframework.validation.FieldError;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
@@ -31,7 +31,7 @@ public class GlobalExceptionHandler {
     }
 
 
-    @ExceptionHandler({MethodArgumentNotValidException.class, HttpMessageNotReadableException.class})
+    @ExceptionHandler({MethodArgumentNotValidException.class})
     @ResponseStatus(HttpStatus.BAD_REQUEST)
     public Map<String, String> procesarValidationException(MethodArgumentNotValidException exception) {
         Map<String, String> exceptionMessage = new HashMap<>();
@@ -42,4 +42,15 @@ public class GlobalExceptionHandler {
         });
         return exceptionMessage;
     }
+
+
+    @ExceptionHandler({DataIntegrityViolationException.class})
+    @ResponseStatus(HttpStatus.BAD_REQUEST)
+    public Map<String, String> procesarConstraintViolation(DataIntegrityViolationException exception) {
+        Map<String, String> exceptionMessage = new HashMap<>();
+        exceptionMessage.put("message", "Constraint exception: " + exception.getMessage());
+        return exceptionMessage;
+    }
+
 }
+
