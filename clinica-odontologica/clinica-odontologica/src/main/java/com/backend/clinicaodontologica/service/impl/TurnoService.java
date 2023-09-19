@@ -138,15 +138,15 @@ public class TurnoService implements ITurnoService {
     }
 
 
-    private PacienteTurnoSalidaDto pacienteSalidaDtoASalidaTurnoDto(Long id) {
+    public PacienteTurnoSalidaDto pacienteSalidaDtoASalidaTurnoDto(Long id) {
         return modelMapper.map(pacienteService.buscarPacientePorId(id), PacienteTurnoSalidaDto.class);
     }
 
-    private OdontologoTurnoSalidaDto odontologoSalidaDtoASalidaTurnoDto(Long id) {
+    public OdontologoTurnoSalidaDto odontologoSalidaDtoASalidaTurnoDto(Long id) {
         return modelMapper.map(odontologoService.buscarOdontologoPorId(id), OdontologoTurnoSalidaDto.class);
     }
 
-    private TurnoSalidaDto entidadADto(Turno turno) {
+    public TurnoSalidaDto entidadADto(Turno turno) {
         TurnoSalidaDto turnoSalidaDto = modelMapper.map(turno, TurnoSalidaDto.class);
         turnoSalidaDto.setPacienteTurnoSalidaDto(pacienteSalidaDtoASalidaTurnoDto(turno.getPaciente().getId()));
         turnoSalidaDto.setOdontologoTurnoSalidaDto(odontologoSalidaDtoASalidaTurnoDto(turno.getOdontologo().getId()));

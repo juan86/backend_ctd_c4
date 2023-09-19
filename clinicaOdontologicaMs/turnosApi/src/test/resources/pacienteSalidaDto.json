@@ -1,0 +1,14 @@
+{
+  "id": 1,
+  "nombre": "Darla",
+  "apellido": "O.",
+  "dni": 252525,
+  "fechaIngreso": "2023-11-02",
+  "domicilio": {
+    "id": 1,
+    "calle": "Wallaby",
+    "numero": 42,
+    "localidad": "Sydney",
+    "provincia": "Nueva Gales del Sur"
+  }
+}
